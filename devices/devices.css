@@ -1,0 +1,99 @@
+body{
+    padding: 50px;
+    position: relative;
+}
+
+.devicescontent{
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    min-height: 100vh;
+    gap: 50px;
+
+}
+.devicescontent .device{
+    padding: 20px;
+    position: relative;
+}
+.devicescontent .device img{
+    width: 30px;
+    position: absolute;
+    opacity: .7;
+    cursor: pointer;
+}
+.devicescontent .device img:hover{
+    opacity: 1;
+}
+.devicescontent .device .deviceType{
+    color: #FFF;
+    font-size: 20;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.home{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 5px 10px;
+    background-color: #FFF;
+    border: 0;
+}
+.home a{
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+}
+
+.Alert{
+    display: flex;
+    flex-direction: column;
+    min-height: 50px;
+}
+.Alert p{
+    font-size: 50px;
+}
+
+.device .row{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.device .row .price{
+    color: #FFF;
+}
+.device .row .col details {
+    max-width: 300px;
+    max-height: 70px;
+    overflow: auto;
+
+}
+.device .row .col details summary{
+    
+    font-size: 18px;
+}
+.device .row .col details p {
+    margin-top: 5px;
+}
+.device .row .col details::-webkit-scrollbar{
+    width: 5px;
+    background-color: rgb(143, 143, 143);
+}
+.device .row .col details::-webkit-scrollbar-thumb{
+    background-color: #000;
+}
+
+.swal2-select{
+    max-width: 80% !important;
+    margin: 15px auto 10px;
+    padding: 10px;
+    direction: rtl;
+}
+.swal2-select option{
+    color: #000;
+    font-weight: bolder;
+    font-size: 20px;
+}
+

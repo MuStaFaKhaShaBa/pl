@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Style.css" />
+    <title>محزن</title>
+  </head>
+
+  <body>
+    <div class="bodycontent">
+      <div class="sidebar">
+        <div class="sidebarcontent">
+          <h1>Playstation Zezo</h1>
+          <ul>
+            <li>
+              <a href="../index.html">الرئيسيه</a>
+            </li>
+            <li id="adddevice">
+              <a href="../add/add.html">التحكم بالاجهزه</a>
+            </li>
+            <li>
+              <a href="../cout/cout.html"> الايرادات</a>
+            </li>
+            <li>
+              <a href="#">التحكم بالمستخدمين</a>
+            </li>
+            <li>
+              <a href="#"> الاعدادات</a>
+            </li>
+            <li>
+              <a href="../history/history.html"> السجل</a>
+            </li>
+
+            <button class="logout">تسجيل خروج</button>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Add Product -->
+
+      <div class="container">
+        <div class="add">
+          <div class="addcontent">
+            <button class="adddevice">اضافه منتج جديد</button>
+            <table id="table">
+              <tr>
+                <th>اسم المنتج</th>
+                <th>سعر البيع</th>
+                <th>حذف</th>
+              </tr>
+
+              <tbody id="tbody"></tbody>
+            </table>
+            <!-- boot -->
+
+            <div class="deviceinfo">
+              <h1>اضافه منتج جديد</h1>
+              <label>اسم المنتج </label>
+              <input id="name" type="text" />
+
+              <label>السعر</label>
+              <input id="salebuy" type="number" />
+
+              <div class="btns">
+                <button id="addde">اضافه</button>
+                <button id="close">اغلاق</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./store.js"></script>
+  </body>
+</html>

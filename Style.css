@@ -1,0 +1,465 @@
+header {
+    background-color: black;
+    color: #fff;
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+
+    background-image: url(./images/thumb-1920-427535.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: blue;
+    font-weight: bold;
+    font-style: italic;
+    text-transform: capitalize;
+    margin-top: 8%;
+}
+
+/* 
+
+*/
+
+/*sidebar */
+
+.sidebar {
+    width: 20%;
+    height: 100vh;
+    background-color: black;
+    color: #fff;
+    padding: 10px;
+    /* z-index: -10; */
+}
+.close {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /* align-items: flex-start; */
+}
+.close i {
+    font-size: 2rem;
+}
+.sidebar .sidebarcontent {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+.sidebarcontent h1 {
+    font-size: 20px;
+    color: gray;
+}
+.sidebarcontent ul {
+    list-style: none;
+    margin-top: 5%;
+}
+
+.sidebarcontent ul li {
+    margin-bottom: 20px;
+    background-color: #fff;
+    color: black;
+    text-align: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+ul li a {
+    text-decoration: none;
+    color: black;
+}
+.sidebarcontent ul li:hover {
+    opacity: 0.5;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    position: relative;
+}
+
+.app {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.bodycontent {
+    display: flex;
+}
+
+.appcontent {
+    width: 100%;
+    /* height: 100px; */
+    /* background-color: blue; */
+    color: #fff;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+.incomes{
+    display: flex;
+}
+.appcontent .total {
+    min-width: 200px;
+    background-color: #fff;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 20px;
+    margin: 20px 10px 0 ;
+    cursor: pointer;
+    transition: 0.5s;
+    font-size: 1.2rem;
+    opacity: .8;
+}
+.totalThisDay{
+    font-weight: bold;
+}
+.total:hover {
+    opacity: 1;
+}
+
+.start {
+    margin: auto;
+}
+
+.start button {
+    width: 220px;
+    height: 40px;
+    background-color: green;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.start button i {
+    margin-left: 10px;
+}
+
+.add {
+    width: 100%;
+}
+
+.addcontent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40%;
+}
+
+.addcontent button {
+    width: 80%;
+    height: 40px;
+    background-color: black;
+    color: wheat;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.5s;
+    margin-bottom: 8%;
+}
+
+.addcontent button:hover {
+    opacity: 0.6;
+}
+
+.deviceinfo {
+    width: 30%;
+    padding: 20px;
+     
+    background-color: black;
+    color: #fff;
+    transform: scale(1.1);
+    border-radius: 5px;
+    position: absolute;
+}
+
+.deviceinfo h1 {
+    background-color: black;
+    color: #fff;
+    font-size: 20px;
+    border-bottom: 1px solid white;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.deviceinfo label {
+    font-size: 1rem;
+    padding-bottom: 10px;
+}
+.deviceinfo select {
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+.deviceinfo input {
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 5px;
+    font-size: 1.2rem;
+}
+
+.deviceinfo .btns {
+    display: flex;
+}
+
+.btns button {
+    border: 1px solid wheat;
+}
+
+table {
+    width: 70%;
+    text-align: center;
+    background-color: black;
+    color: #fff;
+    border-radius: 20px;
+    margin: 10px 0;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+
+tr,
+td {
+    padding: 5px;
+}
+
+select {
+    width: 100%;
+}
+
+.devicescontent {
+    width: 100%;
+    direction: rtl;
+    flex-wrap: wrap;
+}
+
+.devicescontent .device {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: wheat;
+    /* width:25%; */
+    padding: 20px;
+    border: 1px solid black;
+}
+
+.device h1 {
+    width: fit-content;
+    margin: 20px auto;
+    color: #fff;
+}
+
+.device p {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+.timestart {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 20;
+}
+.timeinfo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.timeinfo p span {
+    color: #fff;
+}
+
+.controls button {
+    
+    padding: 10px 15px;
+    border: none;
+    margin-left: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgb(8, 95, 95);
+}
+
+/* .controls button:first-child {
+    background-color: blue;
+}
+.controls .stop {
+    background-color: red;
+}
+.controls button:last-child {
+    background-color: green;
+} */
+
+/* Coutstyle */
+
+.content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.content .cout button ,.content .buyme button{
+    background-color: black;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 0;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: 0.5s;
+    padding: 10px 40px;
+    width: 200px;
+    opacity: .7;
+}
+.content .buyme button.active{
+    background-color: rgb(15, 15, 95);
+}
+.content .cout button:hover,
+.content .buyme button:hover {
+    opacity: 1;
+   
+}
+
+.addbuymoney {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: wheat;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid black;
+    height: 300px;
+    margin-left: 80px;
+    margin-bottom: 30px;
+}
+.addbuymoney input {
+    width: 100%;
+}
+.buycontent {
+    width: 100%;
+
+    /* padding: 10px; */
+    display: flex;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.logout {
+    width: 140px;
+    height: 30px;
+    background-color: green;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+}
+
+.couttype {
+    width: 50%;
+    background-color: black;
+    color: #fff;
+    margin: auto;
+    transform: translate(-50%, -50%);
+    margin-bottom: 8%;
+}
+
+.couttypecontent {
+    background-color: black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.couttypecontent input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 8px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons button {
+    width: 130px;
+    height: 30px;
+    background-color: black;
+    border: 1px solid wheat;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    color: wheat;
+    cursor: pointer;
+}
+
+.add .deviceinfo{
+    top: 200px;
+}
+.main .deviceinfo{
+    top: -150px;
+    left: 350px;
+    z-index: 5;
+}
+
+
+.tableElement{
+    border-radius: 10px !important;
+    max-height: 350px !important;
+    overflow: auto !important;
+}
+.tableElement::-webkit-scrollbar{
+    width: 10px !important;
+    border-radius: 15px !important;
+    background-color: rgb(71, 71, 71) !important;
+}
+.tableElement::-webkit-scrollbar-thumb{
+    background-color: rgb(121, 113, 113);
+    border-radius: 10px;
+    width: 5px;
+}

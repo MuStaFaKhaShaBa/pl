@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Style.css" />
+    <title>ADD</title>
+</head>
+
+<body style="min-height: 105vh;">
+
+    <div class="bodycontent">
+        
+        <div class="sidebar">
+            <div class="sidebarcontent">
+                <h1>Playstation Zezo</h1>
+                <ul>
+                    <li>
+                        <a href="../index.html">الرئيسيه</a>
+                    </li>
+                    <li>
+                        <a href="../store/store.html"> المخزن</a>
+                    </li>
+                    <li>
+                        <a href="../devices/devices.html"> الاجهزه الشغاله</a>
+                    </li>
+                    <li>
+                        <a href="../cout/cout.html"> الايرادات</a>
+                    </li>
+                    <li> 
+                        <a href="#">التحكم  بالمستخدمين</a>
+                    </li>
+                    <li>
+                        <a href="#"> الاعدادات</a>
+                    </li>
+                    <li>
+                        <a href="../history/history.html"> السجل</a>
+                    </li>
+    
+                    <button class="logout">تسجيل خروج</button>
+                </ul>
+            </div>
+    
+            
+        </div>
+       
+        
+
+        <!-- Add Device  -->
+
+        <div class="container">
+            <div class="add">
+
+                <div class="addcontent">
+                    <button class="adddevice">اضافه جهاز جديد</button>
+
+                    <table id="table">
+                        <tr>
+                            <th>رقم الجهاز</th>
+                            <th>فردي</th>
+                            <th>زوجي</th>
+                            <th>تعديل</th>
+                        </tr>
+
+                        <tbody id="tbody">
+
+                        </tbody>
+                    </table>
+                    <!-- boot -->
+
+                    <div class="deviceinfo " >
+                        <h1>اضافه جهاز جديد</h1>
+                        <label>نوع الجهاز</label>
+                        <input id="numdevice" type="text" />
+
+                        <label>سعر الساعه فردي</label>
+                        <input id="pricesingle" type="number" />
+
+                        <label>سعر الساعه زوجي</label>
+                        <input id="multiprice" type="number" />
+
+                        <div class="btns">
+                            <button id="addde">اضافه </button>
+                            <button id="close">اغلاق</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="./add.js"></script>
+
+</body>
+
+</html>

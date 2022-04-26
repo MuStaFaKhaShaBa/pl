@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Style.css" />
+    <link rel="stylesheet" href="cout.css" />
+    <title>الايرادات</title>
+</head>
+
+<body>
+    <div class="bodycontent">
+        
+        <div class="sidebar">
+            <div class="sidebarcontent">
+                <h1>Playstation Zezo</h1>
+                <ul>
+                    <li>
+                        <a href="../index.html">الرئيسيه</a>
+                    </li>
+                    <li id="adddevice"> 
+                        <a href="../add/add.html">التحكم بالاجهزه</a>
+                    </li>
+                    <li>
+                        <a href="../store/store.html"> المخزن</a>
+                    </li>
+                    <li>
+                        <a href="../devices/devices.html"> الاجهزه الشغاله</a>
+                    </li>
+                    <li> 
+                        <a href="#">التحكم  بالمستخدمين</a>
+                    </li>
+                    <li>
+                        <a href="#"> الاعدادات</a>
+                    </li>
+                    <li>
+                        <a href="../history/history.html"> السجل</a>
+                    </li>
+    
+                    <button class="logout">تسجيل خروج</button>
+                </ul>
+            </div>
+    
+            
+        </div>
+
+        <div class="rightside">
+            <div class="content">
+                <div class="cout">
+                    <button class="coutbtn">الايرادات</button>
+                </div>
+
+                <div class="buyme">
+                    <button class="buymebtn">المصروفات</button>
+                </div>
+            </div>
+
+            <div class="table">
+                <div id="table" class="tableElement">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="couttype">
+        <div class="couttypecontent">
+            <label>تاريخ</label>
+            <p class="dateDay" style="margin-bottom: 10px;"></p>
+            <label>نوع المصروفات</label>
+            <input id="type" type="text" maxlength="50" />
+            <label>وصف المصروفات</label>
+            <input id="details" type="text" />
+
+            <label>المبلغ</label>
+            <input id="price" type="number" maxlength="10" />
+        </div>
+        <div class="buttons">
+            <button id="add">اضافه</button>
+            <button id="close">اغلاق</button>
+        </div>
+    </div>
+    <script src="./cout.js"></script>
+</body>
+
+</html>

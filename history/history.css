@@ -1,0 +1,29 @@
+body {
+overflow-x: hidden;}
+.rightside .cout {
+    display: flex;
+    transform: translateY(50px);
+}
+.rightside .cout input {
+    padding: 10px;
+    border: 1px solid #000000;
+    margin-right: 15px;
+    width: 200px;
+}
+.rightside .which {
+    transform: translate(250px, -50px);
+}
+.rightside .which button {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.575);
+    padding: 10px 20px;
+    width: 120px;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 0;
+}
+.rightside .which button.active{
+    background-color: rgba(10, 10, 107, 0.534);
+}
+
