@@ -146,7 +146,7 @@ function yyyymmdd(date) {
 // check new day
 let btnNewDay = document.querySelector(".btnNewDay");
 
-let pay = JSON.parse(window.localStorage.getItem("payment"));
+let pay = JSON.parse(window.localStorage.getItem("payment")) || [];
 
 btnNewDay.addEventListener("click", () => {
     if (yyyymmdd(new Date()) == AllTransaction[AllTransaction.length - 1].date) {
@@ -196,8 +196,6 @@ let dayMonth = getMonth_(AllTransaction[AllTransaction.length - 1].date);
 // Set All Transaction income
 function TranasationIncom() {
     let sumPerMonth = 0;
-    // day
-    // week
     for (
         let el = AllTransaction.length - 1;
         AllTransaction[el] && el >= AllTransaction.length - 30;
