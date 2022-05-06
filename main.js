@@ -80,6 +80,7 @@ class deviceTemp {
         this.drinks = [];
         this.drinkSalary = 0;
         this.discount = 0;
+        this.prePaid = false;
     }
 }
 
@@ -190,37 +191,40 @@ btnNewDay.addEventListener("click", () => {
     });
 });
 
-let dayNum = getDay_(AllTransaction[AllTransaction.length - 1].date);
 let dayMonth = getMonth_(AllTransaction[AllTransaction.length - 1].date);
 
 // Set All Transaction income
 function TranasationIncom() {
-    let sumPerMonth = 0;
+    let sumPerMonth = 0,
+    sumPerMonthOut = 0;
     for (
         let el = AllTransaction.length - 1;
         AllTransaction[el] && el >= AllTransaction.length - 30;
-        el--, dayNum--
+        el--
     ) {
-        let { devicesTrans } = AllTransaction[el];
+        let { devicesTrans,payment } = AllTransaction[el];
 
         sumPerMonth += devicesTrans.reduce((ac, { totalPrice }) => {
             // sum all Salaries in var
             // Loop On Devices Tranasation And Calc Sum Of All Salary At This Day
             return ac + +totalPrice;
         }, 0);
+       
+        sumPerMonthOut += payment.reduce((ac, { price }) => {
+            // sum all Salaries in var
+            // Loop On Devices Tranasation And Calc Sum Of All Salary At This Day
+            return ac + +price;
+        }, 0);
 
         if (el == AllTransaction.length - 1) {
             // Current Day print it's value
             document.querySelector(".totalThisDay").textContent = sumPerMonth;
         }
-
-        // check if we didn't reaches last week
-        if (dayNum >= 0) {
-            document.querySelector(".totalThisWeek").textContent = sumPerMonth;
-        }
         // // Check the yesterday in the current month of today
         if (dayMonth == getMonth_(AllTransaction[el].date)) {
             document.querySelector(".totalThisMonth").textContent = sumPerMonth;
+            document.querySelector(".totalThisMonthOut").textContent = sumPerMonthOut;
+
         } else {
             // last month reaches
             return;

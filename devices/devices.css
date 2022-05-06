@@ -15,11 +15,24 @@ body{
     padding: 20px;
     position: relative;
 }
-.devicescontent .device img{
+.devicescontent .device img,.pre-paid{
     width: 30px;
     position: absolute;
     opacity: .7;
     cursor: pointer;
+}
+.pre-paid{
+    opacity: 1;
+    left: 20px;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background-color: #f00;
+    background-position: center;
+    background-size: 80%;
+}
+.pre-paid:checked{
+    background-image: url('./../images/check-svgrepo-com.svg');
 }
 .devicescontent .device img:hover{
     opacity: 1;
@@ -97,3 +110,6 @@ body{
     font-size: 20px;
 }
 
+.pre-paid{
+
+}

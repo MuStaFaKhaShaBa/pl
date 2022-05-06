@@ -10,7 +10,7 @@ let btnStop = document.querySelector(".stop");
 let DevicesTransfer = [];
 let Drinks = [];
 
-let autoRefreshID ;
+let autoRefreshID;
 /// All Transaction
 let AllTransaction = []; // Push Object Describe Day
 
@@ -39,12 +39,12 @@ function setToLocal() {
 }
 
 function createRunDevice() {
-  autoRefreshID = setTimeout(()=>{
+  autoRefreshID = setTimeout(() => {
 
     clearTimeout(autoRefreshID);
-    window.location ='./devices.html';
+    window.location = './devices.html';
 
-  },1000*60*15)
+  }, 1000 * 60 * 15)
   holder.innerHTML = "";
 
   // Remove all Intervals
@@ -53,9 +53,10 @@ function createRunDevice() {
   TimerIDs.length = 0;
 
   //
-  Devices.forEach(({ name, type, timeStart, bookTime }, index) => {
+  Devices.forEach(({ name, type, timeStart, bookTime, prePaid }, index) => {
     let device = `<div class="device">
               <img src="../images/remove.png" onclick="deleteDevice(${index})" />
+              <input type="checkbox" title="دفع مقدم" class="pre-paid" ${prePaid ? 'checked' : ''} onchange="prePaid(${index})">
               <h1>${name}</h1>
               <p>${bookTime == "openTime" ? "الوقت المنقضي" : "الوقت المتبقي"
       } : - </p>
@@ -226,7 +227,7 @@ function remainderTime(Box, bookTime, timeStart, index) {
     minutes.textContent =
       (+bookTime % 60 || (+hours.textContent-- && 60)) - +minutes.textContent;
 
-    if(+minutes.textContent < 0 ){
+    if (+minutes.textContent < 0) {
       minutes.textContent = 60 + +minutes.textContent;
       hours.textContent--;
     }
@@ -305,35 +306,40 @@ function timeFinish(index, Id, Box) {
 }
 
 function overTime(index) {
-  new Promise((resolve) => {
-    resolve(
-      Swal.fire({
-        input: "text",
-        allowOutsideClick: false,
-        inputLabel: "كم المده المضافه",
-        inputPlaceholder: "ادخل المده",
-      })
-    );
-  }).then((v) => {
-    if (v) {
-      Swal.fire(`المده المضافه هي: ${v.value}`);
-    }
+  if (Devices[index].bookTime != 'openTime') {
+    new Promise((resolve) => {
+      resolve(
+        Swal.fire({
+          input: "text",
+          allowOutsideClick: false,
+          inputLabel: "كم المده المضافه",
+          inputPlaceholder: "ادخل المده",
+        })
+      );
+    }).then((v) => {
+      if (v) {
+        Swal.fire(`المده المضافه هي: ${v.value}`);
+      }
 
-    if (!Devices[index].finish) {
-      // current interval running
-      Devices[index].bookTime = +Devices[index].bookTime + +v.value || 0;
-    } else {
-      // if not
-      Devices[index].bookTime = +v.value || 0; // add new value
-      Devices[index].timeStart = Date.now(); // set time starts
-      Devices[index].finish = false; // make finish to false
-    }
+      if (!Devices[index].finish) {
+        // current interval running
+        Devices[index].bookTime = +Devices[index].bookTime + +v.value || 0;
+      } else {
+        // if not
+        Devices[index].bookTime = +v.value || 0; // add new value
+        Devices[index].timeStart = Date.now(); // set time starts
+        Devices[index].finish = false; // make finish to false
+      }
 
-    Devices[index].totalTime =
-      +Devices[index].totalTime + +v.value || +Devices[index].totalTime; // add new value to total time
+      Devices[index].totalTime =
+        +Devices[index].totalTime + +v.value || +Devices[index].totalTime; // add new value to total time
 
-    setToLocal();
-  });
+      setToLocal();
+    });
+  }
+  else{
+    alert("الجهاز وقت مفتوح");
+  }
 }
 
 function stopOpt(index) {
@@ -596,4 +602,9 @@ function setDiscount(index) {
     Devices[index].totalPrice -= +value.value;
     setToLocal();
   });
+}
+function prePaid(index) {
+  Devices[index].prePaid = !Devices[index].prePaid;
+
+  setToLocal();
 }
