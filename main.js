@@ -196,20 +196,20 @@ let dayMonth = getMonth_(AllTransaction[AllTransaction.length - 1].date);
 // Set All Transaction income
 function TranasationIncom() {
     let sumPerMonth = 0,
-    sumPerMonthOut = 0;
+        sumPerMonthOut = 0;
     for (
         let el = AllTransaction.length - 1;
         AllTransaction[el] && el >= AllTransaction.length - 30;
         el--
     ) {
-        let { devicesTrans,payment } = AllTransaction[el];
+        let { devicesTrans, payment } = AllTransaction[el];
 
-        sumPerMonth += devicesTrans.reduce((ac, { totalPrice }) => {
+        sumPerMonth += devicesTrans.reduce((ac, { totalPrice ,discount}) => {
             // sum all Salaries in var
             // Loop On Devices Tranasation And Calc Sum Of All Salary At This Day
-            return ac + +totalPrice;
+            return ac + +totalPrice ;
         }, 0);
-       
+
         sumPerMonthOut += payment.reduce((ac, { price }) => {
             // sum all Salaries in var
             // Loop On Devices Tranasation And Calc Sum Of All Salary At This Day
@@ -222,7 +222,7 @@ function TranasationIncom() {
         }
         // // Check the yesterday in the current month of today
         if (dayMonth == getMonth_(AllTransaction[el].date)) {
-            document.querySelector(".totalThisMonth").textContent = sumPerMonth;
+            document.querySelector(".totalThisMonth").textContent = +sumPerMonth  - +sumPerMonthOut;
             document.querySelector(".totalThisMonthOut").textContent = sumPerMonthOut;
 
         } else {
